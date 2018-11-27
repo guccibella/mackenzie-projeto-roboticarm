@@ -5,6 +5,7 @@
 ### Integrantes do grupo:
 
 * Isabella Christianini Scalon
+* Luiz Felipe Isobata Yoshiassu
 
 ### Descrição resumida do projeto:
 O projeto consiste em montar, utilizando o Arduino UNO, um braço robótico com joystick. Ele poderá ser usado para diversos fins.
@@ -14,4 +15,5 @@ O projeto consiste em montar, utilizando o Arduino UNO, um braço robótico com 
 * Conjunto de parafusos;   
 * Conjunto de porcas;
 * Quatro servos;
+* Arduino UNO.
 _______________________________________
