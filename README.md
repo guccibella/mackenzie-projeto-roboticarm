@@ -6,6 +6,8 @@
 
 * Isabella Christianini Scalon
 * Luiz Felipe Isobata Yoshiassu
+* Gabriel Ruiz Monteiro
+* Gabrielle Baptista
 
 ### Descrição resumida do projeto:
 O projeto consiste em montar, utilizando o Arduino UNO, um braço robótico com joystick. Ele poderá ser usado para diversos fins.
