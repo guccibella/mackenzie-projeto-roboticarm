@@ -1,0 +1,71 @@
+// include the Servo library
+#include <Servo.h>
+
+Servo myServo1;  
+Servo myServo2;  
+Servo myServo3; 
+Servo myServo4;  
+
+int const potPin1 = A0; 
+int const potPin2 = A1; 
+int const potPin3 = A2; 
+int const potPin4 = A3; 
+
+int potVal1;  
+int angle1;  
+int potVal2;  
+int angle2;  
+int potVal3;  
+int angle3;   
+int potVal4;  
+int angle4;   
+
+void setup() {
+  myServo1.attach(9); 
+  myServo2.attach(11); 
+  myServo3.attach(10); 
+  myServo4.attach(6); 
+
+  Serial.begin(9600); 
+}
+
+void loop() {
+  potVal1 = analogRead(potPin1); 
+  potVal2 = analogRead(potPin2); 
+  potVal3 = analogRead(potPin3); 
+  potVal4 = analogRead(potPin4); 
+  
+  angle1 = map(potVal1, 0, 1023, 0, 179);
+  angle2 = map(potVal2, 0, 1023, 45, 135); 
+  angle3 = map(potVal3, 0, 1023, 0, 179);
+  angle4 = map(potVal4, 0, 1023, 0, 179);
+
+  Serial.print("potVal1: ");
+  Serial.print(potVal1);
+  Serial.print(", angle1: ");
+  Serial.println(angle1);
+  Serial.print("potVal2: ");
+  Serial.print(potVal2);
+  Serial.print(", angle2: ");
+  Serial.println(angle2);
+  Serial.print("potVal3: ");
+  Serial.print(potVal3);
+  Serial.print(", angle3: ");
+  Serial.println(angle3);
+  Serial.print("potVal4: ");
+  Serial.print(potVal4);
+  Serial.print(", angle4: ");
+  Serial.println(angle4);
+  
+  myServo1.write(angle1);
+  myServo2.write(angle2);
+  myServo3.write(angle3);
+  myServo4.write(angle4);
+
+  while (myServo1.read() != angle1) { delay(10); }
+  while (myServo2.read() != angle2) { delay(10); }
+  while (myServo3.read() != angle3) { delay(10); }
+  while (myServo4.read() != angle4) { delay(10); }  
+ 
+  delay(30);
+}
